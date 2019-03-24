@@ -1,5 +1,6 @@
 import tweepy #https://github.com/tweepy/tweepy
 import csv
+import simplejson as json
 
 #Twitter API credentials
 consumer_key = 'Ut1OtYh9eN3Kpsy23QNaTrWFA'
@@ -30,7 +31,7 @@ def get_tweets(screen_name):
 	
 	#keep grabbing tweets until there are no tweets left to grab
 	while len(new_tweets) > 0:
-		print "getting tweets before %s" % (oldest)
+		print ("getting tweets before %s" % (oldest))
 		
 		#all subsiquent requests use the max_id param to prevent duplicates
 		new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest)
@@ -41,20 +42,35 @@ def get_tweets(screen_name):
 		#update the id of the oldest tweet less one
 		oldest = alltweets[-1].id - 1
 		
-		print "...%s tweets downloaded so far" % (len(alltweets))
+		print ("...%s tweets downloaded so far" % (len(alltweets)))
 	
 	#transform the tweepy tweets into a 2D array that will populate the csv	
 	outtweets = [[tweet.id_str, tweet.created_at, tweet.text.encode("utf-8")] for tweet in alltweets]
 	
+	#write objects to JSON
+	file = open('tweet.json', 'w') 
+	print ("Writing tweet objects to JSON please wait...")
+	for status in alltweets:
+		json.dump(status._json,file,sort_keys = True,indent = 4)
+
+	#close the file
+	print ("Done")
+	file.close()
+
 	#write the csv	
-	with open('%s_tweets.csv' % screen_name, 'wb') as f:
+	with open('%s_tweets.csv' % screen_name, 'w') as f:
+		print("Writing tweet objects to CSV please wait...")
 		writer = csv.writer(f)
 		writer.writerow(["id","created_at","text"])
 		writer.writerows(outtweets)
-	
-	pass
 
+	print("Done")
+
+
+	pass
+	
+	
 
 if __name__ == '__main__':
 	#pass in the username of the account you want to download
-	get_all_tweets("midasIIITD")
+	get_tweets("midasIIITD")
