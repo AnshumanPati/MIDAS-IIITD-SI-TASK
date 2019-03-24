@@ -8,7 +8,7 @@ access_key = '746049926648504320-nciHdZeUMTusxa4Y63oJ5yYhaTVpEvj'
 access_secret = 'w6gnrTuQrWXlUc0eAFa9fvAbIbYoEipQowsHxscPAhLTH'
 
 
-def get_all_tweets(screen_name):
+def get_tweets(screen_name):
 	#Twitter only allows access to a users most recent 3240 tweets with this method
 	
 	#authorize twitter, initialize tweepy
