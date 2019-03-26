@@ -3,10 +3,10 @@ import csv
 import simplejson as json
 
 #Twitter API credentials
-consumer_key = 'Ut1OtYh9eN3Kpsy23QNaTrWFA'
-consumer_secret = 'CVBKeMPpYQ0SCL0SEIO1rWAuGrUhUyO6L9kUUmOHZd8ICB6fOi'
-access_key = '746049926648504320-nciHdZeUMTusxa4Y63oJ5yYhaTVpEvj'
-access_secret = 'w6gnrTuQrWXlUc0eAFa9fvAbIbYoEipQowsHxscPAhLTH'
+consumer_key = ''
+consumer_secret = ''
+access_key = ''
+access_secret = ''
 
 
 def get_tweets(screen_name):
