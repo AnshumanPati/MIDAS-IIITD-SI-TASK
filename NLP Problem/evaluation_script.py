@@ -56,8 +56,8 @@ inputdict = {}
 
 #Place the goldstandard.csv and the submission.csv in the same folder as this evaluation script
 #The structure of submission.csv has to be: "id, sentence, prediction" with prediction in [0,1]
-inputfilename = "submission.csv"
-filename = "goldstandard.csv"
+inputfilename = "SubtaskA_Trial_Test.csv"
+filename = "V1.4_Training.csv"
 
 
 with open(filename) as data_file:    
@@ -70,7 +70,6 @@ with open(inputfilename) as data_file2:
 	for inputt in Input:
 		if len(inputt[0]) > 0 and len(inputt[2]) > 0:
 			inputdict[inputt[0]] = int(inputt[2])
-
 
 
 golddictlist = build_dicts(golddict,inputdict)[0]

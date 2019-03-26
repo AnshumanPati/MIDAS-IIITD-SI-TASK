@@ -11,7 +11,7 @@ Output: test_data_for_subtaskA_predictions.csv, test_data_for_subtaskB_predictio
 
 Run the script: semeval-task9-baseline.py test_data_for_subtaskA_predictions.csv test_data_for_subtaskB_predictions.csv
 '''
-
+import os
 import nltk
 import pandas as pd
 
@@ -22,6 +22,11 @@ import os
 
 import sys
 from nltk.tokenize import word_tokenize
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.ensemble import RandomForestClassifier
+from KaggleWord2VectUtility import KaggleWord2VectUtility
+import pandas as pd
+
 
 #To be uncommented in case the average_perceptron_tagger is not on your machine yet 
 # import nltk
@@ -114,6 +119,13 @@ def write_csv(sent_list, label_list, out_path):
 
 
 if __name__ == '__main__':
+
+    #Read the data
+    train = pd.read_csv(os.path.join(os.path.dirname())
+
+
+
+
     sent_list = read_csv(data_path)
     label_list = classify(sent_list)
     write_csv(sent_list, label_list, out_path)
