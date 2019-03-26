@@ -1,12 +1,3 @@
-'''
-Evaluation script for the Semeval 2019 Task 9 competition.
-Written by Tobias Daudert
-Contact: tobias.daudert@insight-centre.org
-
-Input: submission.csv which has to be in the same folder as this script. The accepted structure is: id, sentence, prediction
-Reference: goldstandard.csv which has to be in the same folder as this script.
-Output: scores.txt
-'''
 
 import numpy as np
 import csv
