@@ -1,5 +1,5 @@
 # MIDAS-IIITD-SI-TASK
-This repository intends to solve the various problem statements attributed to the Summer Internship Task at MIDAS@IIITD.
+This repository intends to solve the various problem statements attributed to the Summer Internship Task at MIDAS@IIITD. My focus is on solving the Python Problem and the NLP Problem.
 
 ## For the Python Problem
 * Please evaluate the code at **main.ipynb** and run the script **main.py** with the required libraries installed to obtain the desired results. 
@@ -10,4 +10,4 @@ This repository intends to solve the various problem statements attributed to th
 ## For the NLP Problem
 * Please evaluate the code at **main.ipynb** and run the script **main.py** with the required libraries installed to obtain the desired results. 
 * The result of the script run for *SubtaskA_EvaluationData.csv* is stored at *Anshuman_Pati.csv* file.
-* The script is written in Python 2.
+* The script is written in Python 2 as per the requirement of the problem statement for SubtaskA.
